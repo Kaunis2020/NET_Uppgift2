@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width = device-width, initial-scale=1.0" charset="UTF-8" />
+    <title>Knottens bokförlag</title>
+    <link href="~/css/indexstil.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/kontakt.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="logo">
+                <a href="@Url.Action("Index", "Home")"><img src="~/images/logga.gif" alt="Knottens logga" width="138" height="144" /></a>
+            </div>
+            <div id="textlogo">
+                <a href="@Url.Action("Index", "Home")"><img src="~/images/knottensgrontunn.gif" width="467" height="73" alt="Knottens bokförlag" /></a>
+            </div>
+        </header>
+        <div id="content">
+            <nav>
+                <ul>
+                    <li>@Html.ActionLink("Hem", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Press", "Press", "Home")</li>
+                    <li>@Html.ActionLink("Böcker", "Books", "Home")</li>
+                    <li>@Html.ActionLink("Kontakt", "Kontakt", "Home")</li>
+                    <li>@Html.ActionLink("Personal", "Employees", "Home")</li>
+                </ul>
+            </nav>
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

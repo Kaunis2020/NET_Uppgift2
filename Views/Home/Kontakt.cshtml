@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Kontakt";
+}
+
+<main>
+    <h1>Kontakta oss!</h1>
+    <br />
+    <div class="container">
+        <form name="frm" method="post" action="@Url.Action("SendForm", "Home")" onsubmit="return validateForm()">
+            <label for="fname">Förnamn</label>
+            <input type="text" id="fname" name="firstname" placeholder="Ditt förnamn">
+            <label for="lname">Efternamn</label>
+            <input type="text" id="lname" name="lastname" placeholder="Ditt efternamn">
+            <label for="epost">E-post</label>
+            <input type="text" id="epost" name="epost" placeholder="Din E-post">
+            <label for="country">Land</label>
+            <select id="country" name="country">
+                <option value="Danmark"> Danmark </option>
+                <option value="Finland"> Finland </option>
+                <option value="Island"> Island </option>
+                <option value="Norge"> Norge </option>
+                <option value="Sverige"> Sverige </option>
+                <option value="Annat land"> Annat land </option>
+            </select>
+            <label for="subject">Din fråga</label>
+            <textarea id="subject" name="subject" placeholder="Skriv Din fråga här" style="height:200px"></textarea>
+            <div class="buttonhold">
+                <input type="submit" value="Skicka">
+            </div>
+        </form>
+    </div>
+    <br/>
+    <div id="viktigt">
+        <p>OBS!!! Vi använder cookies</p>
+    </div>
+</main>
+<script type="text/javascript" src="~/js/valid.js"></script>

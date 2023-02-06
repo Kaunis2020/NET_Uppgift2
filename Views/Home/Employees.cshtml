@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Employee>
+@{
+    ViewData["Title"] = "Medarbetare";
+}
+
+<style>
+    td.email {
+        color: blue;
+        font-weight: bolder;
+        text-decoration-line: underline;
+        text-decoration-color: blue;
+    }
+
+    #datetimediv {
+        float: right;
+        margin-right: 30px;
+        font-style: italic;
+    }
+</style>
+
+<main id="emplmain">
+    <h1>@ViewData["Title"]</h1>
+    <p>Nedan ser Du våra fina medarbetare och deras kontaktuppgifter</p>
+
+    @if (Model != null)
+    {
+        <table class="table">
+            <tr id="table_header">
+                <th id="idth">ID</th>
+                <th colspan="2" id="colspanth">Namn</th>
+                <th>E-post</th>
+                <th>Telefon</th>
+                <th>Avdelning</th>
+            </tr>
+            @foreach (var empl in Model)
+            {
+                <tr>
+                    <td>@empl.Nummer</td>
+                    <td>@empl.First_name</td>
+                    <td> @empl.Last_name</td>
+                    <td class="email"> @empl.Email</td>
+                    <td>@empl.Phone</td>
+                    <td> @empl.Department</td>
+                </tr>
+            }
+        </table>
+    }
+    <br />
+    <br />
+    <p><hr /></p>
+    <br />
+    <div id="datetimediv">Sidan uppdaterades senast den @DateTime.Now.ToShortDateString() &nbsp; kl. @DateTime.Now.ToShortTimeString()</div>
+</main>

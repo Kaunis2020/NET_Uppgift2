@@ -1,0 +1,21 @@
+﻿@model Uppgift2.Models.Bok
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "EnBok";
+}
+<main id="bookmain">
+    <h1> @Model.Titel </h1>
+    <div id="separat">
+        <img src="~/images/@Model.Bild" width="365" alt="bild" />
+        <p>Författare: @Model.Author</p>
+        <p>@Model.Beskrivning</p>
+    </div>
+    <div id="info">
+        <p>Kategori:<br />@Model.Kategori</p>
+        <p>Pris: @Model.Pris kr</p>
+        <p>Antal sidor: @Model.AntalSidor</p>
+        <p> Utgiven: @Model.UtgivDatum</p>
+    </div>
+</main>
+<script type="text/javascript" src="~/js/bildspel.js"></script>

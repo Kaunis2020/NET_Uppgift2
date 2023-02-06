@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Books";
+}
+
+<main id="bookmain">
+    <h2 class="bigger"> URVAL AV VÅRA BÖCKER </h2>
+    <div id="bild">
+        <table id="Album">
+            <caption id="CaptionBox"> Här kan Du se urval av våra böcker </caption>
+            <tr><td><img src="~/bilder/bok0.jpg" id="Bildspel" height="227" width="193" alt="Bildspel" /></td></tr>
+        </table>
+    </div>
+    <div id="krokodil">
+        <br />
+        <a href="@Url.Action("EnBok", "Home", new { id = 1 })">
+            <img src="~/images/thumbnails/krokodil.jpg" width="200" height="149" alt="Bild på boken Krokodiler och andra urdjur" />
+        </a>
+        <p>
+            <h4>Krokodiler och andra urdjur</h4>Författare: Lise Lyngeland<br />48 sidor <br />Om riktigt gamla djur i vår natur<br />som många gånger är snällare än<br />man kan tro. Här får man också<br />veta ett och annat om arternas ursprung.<br />
+            <br />
+            <hr />
+        </p>
+        <a href="@Url.Action("EnBok", "Home", new { id = 0 })">
+            <img src="~/images/thumbnails/amfibie.jpg" width="200" height="180" alt="Bild på boken Krokodiler och andra urdjur" />
+        </a>
+        <p>
+            <h4>Amfibie?! JAG?</h4>Författare: Nelson Nedem<br />36 sidor<br />Om livet i kärret bland grodor och paddor.<br />
+            <br />
+            <hr />
+        </p>
+        <a href="@Url.Action("EnBok", "Home", new { id = 3 })">
+            <img src="~/images/thumbnails/odlan.jpg" width="200" height="149" alt="Bild på boken Krokodiler och andra urdjur" />
+        </a>
+        <h4>Ödlans flykt</h4>
+        <p>Författare: Doriano Oregano<br />36 sidor<br />En bok som berättar om den kvicka<br />lilla ödlan som gömmer sig i mörka skrevor</p>
+    </div>
+</main>
+<script type="text/javascript" src="~/js/bildspel.js"></script>

@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Svar";
+}
+<main>
+    @{
+        if (User.Identity != null)
+        {
+            <h1> Meddelande från Knottens bokförlag</h1>
+            <p><img id="letter" src="~/images/letter1.gif" width="145" height="160" alt="Letter" /></p><p> <b>Bekräftelse på mottaget meddelande </b></p>
+            if (User.Claims.Count() > 0)
+            {
+                <p>Hej @User.Claims.ElementAt(0).Value, <br /><br />Vi har tagit emot följande uppgifter:<br /></p>
+            }
+            else
+            {
+                <p>Hej  @ViewBag.Name, <br /><br />Vi har tagit emot följande uppgifter:<br /></p>
+            }
+            @ViewBag.Land <br />
+            @ViewBag.EPost <br />
+            @ViewBag.Message <br />
+
+            <p>Ärendets ankomstdatum är: @ViewBag.Datum</p>
+            <p>Notera följande ärendenummer: @ViewBag.ID_Num </p>
+            <p>
+                Vi besvarar alla brev inom tre arbetsdagar. <br />
+                Svaret kommer att skickas till Din E-postadress. <br />
+            </p>
+            <p>Vid ytterligare kontakter med oss ange aktuellt ärendenummer. <br /></p>
+            <br />
+            <p><b><i>Med vänliga hälsningar Knottens bokförlag</i></b></p>
+        }
+    }
+</main>
